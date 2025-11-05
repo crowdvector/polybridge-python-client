@@ -1,6 +1,6 @@
 # Polybridge Python Client
 
-Official Python client library for the [Polybridge Analytics API](https://polybridge.app).
+Official Python client library for the [Polybridge Analytics API](https://polybridge.ai).
 
 ## Installation
 
