@@ -240,12 +240,6 @@ cd polybridge-python-client
 
 # Run tests
 pytest
-
-# Format code
-black .
-
-# Lint
-ruff check .
 ```
 
 ### Optional Dependencies
