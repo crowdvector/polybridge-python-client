@@ -4,8 +4,21 @@ Official Python client library for the [Polybridge Analytics API](https://polybr
 
 ## Installation
 
+Install from source:
+
 ```bash
-pip install polybridge-python-client
+# Clone the repository
+git clone https://github.com/crowdvector/polybridge-python-client.git
+cd polybridge-python-client
+
+# Install the package
+pip install .
+```
+
+Or install in editable mode for development:
+
+```bash
+pip install -e .
 ```
 
 ## Quick Start
@@ -113,7 +126,11 @@ nested = client.fetch_nested_timeseries(
 
 Main client class for interacting with the API.
 
-#### `__init__(api_key, *, base_url=DEFAULT_BASE_URL, timeout=60, session=None)`
+#### Initialization
+
+```python
+PolybridgeClient(api_key, *, base_url=DEFAULT_BASE_URL, timeout=60, session=None)
+```
 
 Initialize the client.
 
@@ -122,13 +139,21 @@ Initialize the client.
 - `timeout` (int): Request timeout in seconds (default: 60)
 - `session` (requests.Session): Custom session for connection pooling (optional)
 
-#### `fetch_market_catalog(*, assets=None, horizons=None, market_types=None, start_ts=None, end_ts=None)`
+#### fetch_market_catalog
+
+```python
+fetch_market_catalog(*, assets=None, horizons=None, market_types=None, start_ts=None, end_ts=None)
+```
 
 Get market catalog matching filters.
 
 Returns a dictionary with `"markets"` list.
 
-#### `fetch_timeseries(*, asset, horizons, market_types=None, start_ts=None, end_ts=None, hours=6.0, include_prices=True, include_open_interest=True, include_options_metrics=False, prices_instrument="spot", chunk_size=10, include_probabilities=True)`
+#### fetch_timeseries
+
+```python
+fetch_timeseries(*, asset, horizons, market_types=None, start_ts=None, end_ts=None, hours=6.0, include_prices=True, include_open_interest=True, include_options_metrics=False, prices_instrument="spot", chunk_size=10, include_probabilities=True)
+```
 
 Fetch timeseries data for an asset.
 
@@ -137,17 +162,29 @@ Returns a `TimeseriesResult` with:
 - `responses`: Raw API responses by interval
 - `dataframes`: Parsed pandas DataFrames
 
-#### `fetch_nested_timeseries(*, asset, horizon, market_types=None, start_ts=None, end_ts=None, hours=6.0, include_spot=True, include_perp=False, include_open_interest=True, include_funding=False)`
+#### fetch_nested_timeseries
+
+```python
+fetch_nested_timeseries(*, asset, horizon, market_types=None, start_ts=None, end_ts=None, hours=6.0, include_spot=True, include_perp=False, include_open_interest=True, include_funding=False)
+```
 
 Fetch nested timeseries data.
 
 Returns a dictionary with `"records"` and `"meta"`.
 
-#### `fetch_up_or_down_options_timeseries(*, asset, start_ts, end_ts, window_days=None, horizon="daily")`
+#### fetch_up_or_down_options_timeseries
+
+```python
+fetch_up_or_down_options_timeseries(*, asset, start_ts, end_ts, window_days=None, horizon="daily")
+```
 
 Fetch up-or-down options data with metrics.
 
-#### `fetch_above_options_timeseries(*, asset, start_ts, end_ts, format="long", horizon="daily")`
+#### fetch_above_options_timeseries
+
+```python
+fetch_above_options_timeseries(*, asset, start_ts, end_ts, format="long", horizon="daily")
+```
 
 Fetch above options data with probabilities.
 
