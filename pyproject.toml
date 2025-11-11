@@ -46,10 +46,16 @@ notebooks = [
     "ipykernel>=6.0.0",
     "matplotlib>=3.7.0",
 ]
+docs = [
+    "sphinx>=7.0.0",
+    "sphinx-rtd-theme>=2.0.0",
+    "sphinx-autodoc-typehints>=2.0.0",
+    "myst-parser>=3.0.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/crowdvector/polybridge-python-client"
-Documentation = "https://github.com/crowdvector/polybridge-python-client#readme"
+Documentation = "https://polybridge-python-client.readthedocs.io"
 Repository = "https://github.com/crowdvector/polybridge-python-client"
 Issues = "https://github.com/crowdvector/polybridge-python-client/issues"
 
