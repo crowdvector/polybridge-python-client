@@ -106,20 +106,6 @@ above_data = client.fetch_above_options_timeseries(
 )
 ```
 
-### Nested Timeseries
-
-Get hierarchical data structure:
-
-```python
-nested = client.fetch_nested_timeseries(
-    asset="BTC",
-    horizon="daily",
-    hours=48,
-    include_spot=True,
-    include_perp=False,
-)
-```
-
 ## API Reference
 
 ### `PolybridgeClient`
@@ -161,16 +147,6 @@ Returns a `TimeseriesResult` with:
 - `catalog`: List of market entries
 - `responses`: Raw API responses by interval
 - `dataframes`: Parsed pandas DataFrames
-
-#### fetch_nested_timeseries
-
-```python
-fetch_nested_timeseries(*, asset, horizon, market_types=None, start_ts=None, end_ts=None, hours=6.0, include_spot=True, include_perp=False, include_open_interest=True, include_funding=False)
-```
-
-Fetch nested timeseries data.
-
-Returns a dictionary with `"records"` and `"meta"`.
 
 #### fetch_up_or_down_options_timeseries
 

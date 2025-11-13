@@ -387,6 +387,7 @@ Jupyter Notebook Examples
 
 For interactive examples, check out the Jupyter notebooks in the ``examples/`` directory:
 
+* ``market_catalog.ipynb``: Market catalog queries and filtering
 * ``query_updown_metrics.ipynb``: Up-or-down options analysis
 * ``query_above_options_timeseries.ipynb``: Above options analysis
 
